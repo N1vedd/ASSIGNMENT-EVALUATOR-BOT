@@ -4,6 +4,10 @@ from tkinter import Tk
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+import getpass
+
+un=input("Enter Gmail Id:-")
+pw=getpass.getpass("Enter Password:-")
 
 driver=webdriver.Chrome()
 driver.maximize_window()
@@ -13,8 +17,6 @@ time.sleep(2)
 
 driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
 time.sleep(2)
-
-from acc import un,pw
 
 driver.find_element_by_id('identifierId').send_keys(un)
 driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
